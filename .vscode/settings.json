@@ -1,5 +1,7 @@
 {
   "editor.formatOnSave": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "cSpell.words": ["Payippara", "Shibu", "Nextdotjs", "Googlecloud"]
+
 }
