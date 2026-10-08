@@ -133,6 +133,32 @@
   }
 }
 
+/* A quiet starfield behind the hero - dark mode only, since stars on a
+   white sky make no sense. See StarField.tsx. */
+.star-field {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .star-field {
+    display: block;
+  }
+}
+
+.star {
+  animation: twinkle 7s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.12;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
 /* The schedule board's one orchestrated moment: bars fill in, in order. */
 @keyframes bar-in {
   from {
@@ -166,6 +192,27 @@
 }
 
 [data-waiting] .bar,
-[data-waiting] .today {
+[data-waiting] .today,
+[data-waiting] .reveal {
   animation-play-state: paused;
+}
+
+/* The general scroll-reveal: section headers and list/grid items fade and
+   lift slightly into place, once, as they cross into view. Same restrained
+   motion language as the schedule board's bars above - short, one-directional,
+   no bounce. --i staggers a group of siblings (see About/Projects/Experience). */
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal-in 650ms cubic-bezier(0.25, 0.1, 0.25, 1) both;
+  animation-delay: calc(var(--i, 0) * 80ms);
 }

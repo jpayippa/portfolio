@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { RevealOnView } from "./RevealOnView";
 
 type SectionProps = {
   id: string;
@@ -17,12 +18,14 @@ export function Section({ id, title, intro, tone = "canvas", children }: Section
       className={tone === "panel" ? "bg-panel" : "bg-canvas"}
     >
       <div className="mx-auto max-w-[1024px] px-5 py-24 sm:px-6 sm:py-32">
-        <header className="mb-12 max-w-[680px] sm:mb-16">
-          <h2 id={headingId} className="display text-[40px] sm:text-[56px]">
-            {title}
-          </h2>
-          {intro ? <p className="lead mt-4">{intro}</p> : null}
-        </header>
+        <RevealOnView>
+          <header className="reveal mb-12 max-w-[680px] sm:mb-16">
+            <h2 id={headingId} className="display text-[40px] sm:text-[56px]">
+              {title}
+            </h2>
+            {intro ? <p className="lead mt-4">{intro}</p> : null}
+          </header>
+        </RevealOnView>
         {children}
       </div>
     </section>

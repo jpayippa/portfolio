@@ -2,11 +2,13 @@ import Image from "next/image";
 import headshot from "../../public/headshot.jpg";
 import { hero, site } from "@/content/site";
 import { ChevronIcon } from "./icons";
+import { StarField } from "./StarField";
 
 export function Hero() {
   return (
-    <section aria-labelledby="hero-heading" className="bg-canvas">
-      <div className="mx-auto grid max-w-[1024px] items-center gap-12 px-5 pt-16 pb-24 sm:px-6 sm:pt-24 sm:pb-32 md:grid-cols-[1fr_340px] md:gap-16">
+    <section aria-labelledby="hero-heading" className="bg-canvas relative overflow-hidden">
+      <StarField />
+      <div className="relative mx-auto grid max-w-[1024px] items-center gap-12 px-5 pt-16 pb-24 sm:px-6 sm:pt-24 sm:pb-32 md:grid-cols-[1fr_340px] md:gap-16">
         <div className="text-center md:text-left">
           <p className="text-muted text-[17px] font-semibold sm:text-[19px]">{site.name}</p>
           <h1 id="hero-heading" className="display mt-2 text-[56px] sm:text-[88px]">

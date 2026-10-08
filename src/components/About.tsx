@@ -1,4 +1,6 @@
+import type { CSSProperties } from "react";
 import { approach, interests, stack, story } from "@/content/about";
+import { RevealOnView } from "./RevealOnView";
 import { Section } from "./Section";
 
 export function About() {
@@ -13,14 +15,20 @@ export function About() {
       </div>
 
       <h3 className="display mt-16 text-[28px]">When I&apos;m not at work</h3>
-      <ul className="mt-6 grid gap-5 md:grid-cols-3">
-        {interests.map((item) => (
-          <li key={item.title} className="bg-canvas rounded-[22px] p-7">
-            <p className="text-[19px] font-semibold tracking-tight">{item.title}</p>
-            <p className="text-muted mt-2">{item.text}</p>
-          </li>
-        ))}
-      </ul>
+      <RevealOnView>
+        <ul className="mt-6 grid gap-5 md:grid-cols-3">
+          {interests.map((item, i) => (
+            <li
+              key={item.title}
+              className="reveal bg-canvas rounded-[22px] p-7"
+              style={{ "--i": i } as CSSProperties}
+            >
+              <p className="text-[19px] font-semibold tracking-tight">{item.title}</p>
+              <p className="text-muted mt-2">{item.text}</p>
+            </li>
+          ))}
+        </ul>
+      </RevealOnView>
 
       <h3 className="display mt-16 text-[28px]">What I work with</h3>
       <p className="text-muted mt-3 max-w-[680px]">{approach}</p>
