@@ -14,10 +14,10 @@ export default function HomePage() {
       <Nav />
       <main id="main">
         <Hero />
-        <Work />
-        <Projects />
-        <Experience />
         <About />
+        <Projects />
+        <Work />
+        <Experience />
         <Contact />
       </main>
       <Footer />

@@ -1,10 +1,10 @@
 import { site } from "@/content/site";
 
 const sections = [
-  { href: "#work", label: "Work" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
 ];
 
 export function Nav() {

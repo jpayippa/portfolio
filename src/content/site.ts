@@ -7,10 +7,10 @@ export const site = {
   name: "Joel Payippara Shibu",
   shortName: "Joel Shibu",
   url: "https://joelps.dev",
-  role: "Software Developer",
+  role: "Software Engineer",
   location: "Ontario, Canada",
   description:
-    "Joel Payippara Shibu is a software developer in Ontario who builds the scheduling, tracking and display systems a manufacturing plant runs on.",
+    "Joel Payippara Shibu is a software engineer in Ontario who likes building things, from web apps and self-hosted tools to whatever is on the 3D printer.",
   /** Optional. Leave empty to hide the email link. */
   email: "",
   /** Optional. Link to a hosted PDF of your résumé. Leave empty to hide it. */
@@ -22,7 +22,7 @@ export const site = {
 } as const;
 
 export const hero = {
-  title: "Software for the factory floor.",
+  greeting: "Hi, I'm Joel.",
   intro:
-    "I'm Joel, a developer at Universal Fabricating North America. I build the tools our plant uses to plan, track and run production, most of them wired straight into the ERP.",
+    "I'm a software engineer in Ontario. I like making things people actually use, whether that's a web app, a self-hosted tool for home, or whatever's on the 3D printer this week.",
 } as const;

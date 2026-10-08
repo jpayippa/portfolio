@@ -37,7 +37,6 @@ const personJsonLd = {
   name: site.name,
   url: site.url,
   jobTitle: site.role,
-  worksFor: { "@type": "Organization", name: "Universal Fabricating North America" },
   alumniOf: { "@type": "CollegeOrUniversity", name: "Western University" },
   sameAs: [site.links.github, site.links.linkedin],
 };

@@ -55,7 +55,7 @@ export function ScheduleBoard() {
 
   return (
     <figure
-      className="window-shadow border-hairline bg-canvas mx-auto w-full max-w-[920px] overflow-hidden rounded-[22px] border text-left"
+      className="window-shadow border-hairline bg-canvas w-full overflow-hidden rounded-[22px] border text-left"
       aria-label="Illustration of a weekly production schedule, with one job moving through cutting, forming, welding, paint, assembly and shipping before its Friday due date."
       role="img"
     >

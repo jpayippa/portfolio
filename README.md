@@ -15,12 +15,13 @@ npm run dev        # http://localhost:3000
 
 All of the words on the site live in `src/content/`. Components only handle layout, so most updates are a change to one of these files:
 
-| File                        | What it holds                                            |
-| --------------------------- | -------------------------------------------------------- |
-| `src/content/site.ts`       | Name, links, hero text, optional email and résumé link   |
-| `src/content/work.ts`       | The "What I build at work" tiles                         |
-| `src/content/projects.ts`   | Side and school projects                                 |
-| `src/content/experience.ts` | Roles and education, the stack list, and the about lines |
+| File                        | What it holds                                          |
+| --------------------------- | ------------------------------------------------------ |
+| `src/content/site.ts`       | Name, links, hero text, optional email and résumé link |
+| `src/content/about.ts`      | Your story, interests and the stack list               |
+| `src/content/projects.ts`   | Projects                                               |
+| `src/content/work.ts`       | The "My day job" section                               |
+| `src/content/experience.ts` | Roles and education for the timeline                   |
 
 The email button and résumé link stay hidden until `email` or `resumeUrl` in `site.ts` is filled in.
 

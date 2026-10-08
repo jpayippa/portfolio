@@ -5,7 +5,7 @@ import { Section } from "./Section";
 export function Experience() {
   const roles = [...experience].sort(byRecency);
   return (
-    <Section id="experience" tone="panel" title="Where I've been.">
+    <Section id="experience" title="Where I've been.">
       <ol className="border-hairline relative space-y-10 border-l pl-7 sm:pl-10">
         {roles.map((r) => (
           <li key={r.id} className="relative">

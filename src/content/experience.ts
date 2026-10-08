@@ -36,17 +36,3 @@ export const experience: Role[] = [
 
 export const earlier =
   "Before and during university I worked in retail and food service, including three years at Tim Hortons where I ran shifts as a supervisor.";
-
-export const outsideWork =
-  "Outside of work I'm usually tinkering with something, whether that's a 3D printer or a new piece of self-hosted software.";
-
-export const stack: { label: string; items: string[] }[] = [
-  { label: "Languages", items: ["TypeScript", "JavaScript", "Python", "SQL"] },
-  { label: "Front end", items: ["React", "Next.js", "Tailwind CSS", "Material UI"] },
-  { label: "Back end", items: ["Node.js", "Express", "Flask", "Socket.IO", "REST APIs"] },
-  { label: "Data", items: ["PostgreSQL", "SQL Server", "Prisma", "SQLite", "Firebase"] },
-  {
-    label: "Infrastructure",
-    items: ["Docker", "nginx", "Linux", "Google Cloud", "GitHub Actions"],
-  },
-];

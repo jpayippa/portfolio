@@ -14,8 +14,8 @@ export function Contact() {
           Let&apos;s talk.
         </h2>
         <p className="lead mx-auto mt-4 max-w-[560px]">
-          Questions about something here, or working on software for manufacturing? I&apos;d like to
-          hear about it.
+          Have a question about something here, or just want to say hi? I&apos;d like to hear from
+          you.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           {site.email ? (

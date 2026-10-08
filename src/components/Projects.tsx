@@ -6,7 +6,7 @@ import { Tags } from "./Tags";
 
 export function Projects() {
   return (
-    <Section id="projects" title="Other things I've made.">
+    <Section id="projects" title="Things I've made.">
       <div className="divide-hairline border-hairline divide-y border-y">
         {projects.map((p) => (
           <article key={p.id} className="grid gap-3 py-9 md:grid-cols-[240px_1fr] md:gap-12">

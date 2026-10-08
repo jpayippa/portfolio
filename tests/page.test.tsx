@@ -3,6 +3,7 @@ import { Contact } from "@/components/Contact";
 import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import { Nav } from "@/components/Nav";
+import { Work } from "@/components/Work";
 
 describe("page sections", () => {
   it("renders a single h1 in the hero", () => {
@@ -10,8 +11,13 @@ describe("page sections", () => {
     expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
   });
 
-  it("describes the schedule illustration for screen readers", () => {
+  it("includes a described portrait in the hero", () => {
     render(<Hero />);
+    expect(screen.getByRole("img", { name: /portrait/i })).toBeInTheDocument();
+  });
+
+  it("describes the schedule illustration for screen readers", () => {
+    render(<Work />);
     expect(screen.getByRole("img", { name: /production schedule/i })).toBeInTheDocument();
   });
 

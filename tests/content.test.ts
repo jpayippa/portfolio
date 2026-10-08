@@ -1,4 +1,5 @@
-import { experience, stack } from "@/content/experience";
+import { interests, stack, story } from "@/content/about";
+import { experience } from "@/content/experience";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { work } from "@/content/work";
@@ -36,14 +37,12 @@ describe("site content", () => {
 
   it("has no empty text", () => {
     const strings = [
-      ...work.flatMap((w) => [w.title, w.summary, ...w.details, ...w.stack]),
+      ...story,
+      ...interests.flatMap((i) => [i.title, i.text]),
+      ...work.flatMap((w) => [w.title, w.summary]),
       ...projects.flatMap((p) => [p.title, p.summary, p.context, ...p.stack]),
       ...stack.flatMap((g) => [g.label, ...g.items]),
     ];
     strings.forEach((s) => expect(s.trim()).not.toBe(""));
-  });
-
-  it("has exactly one featured work item", () => {
-    expect(work.filter((w) => w.feature)).toHaveLength(1);
   });
 });
