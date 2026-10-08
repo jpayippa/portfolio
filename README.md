@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# joelps.dev
 
-## Getting Started
+Personal site of Joel Payippara Shibu. Built with Next.js, exported as static files, and hosted on Firebase Hosting.
 
-First, run the development server:
+## Getting started
+
+Requires Node 22 (see `.nvmrc`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Editing content
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+All of the words on the site live in `src/content/`. Components only handle layout, so most updates are a change to one of these files:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| File                        | What it holds                                            |
+| --------------------------- | -------------------------------------------------------- |
+| `src/content/site.ts`       | Name, links, hero text, optional email and résumé link   |
+| `src/content/work.ts`       | The "What I build at work" tiles                         |
+| `src/content/projects.ts`   | Side and school projects                                 |
+| `src/content/experience.ts` | Roles and education, the stack list, and the about lines |
 
-## Learn More
+The email button and résumé link stay hidden until `email` or `resumeUrl` in `site.ts` is filled in.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command             | What it does                                      |
+| ------------------- | ------------------------------------------------- |
+| `npm run dev`       | Local dev server                                  |
+| `npm run build`     | Static export to `out/`                           |
+| `npm run preview`   | Serve `out/` locally                              |
+| `npm run lint`      | ESLint with the Next.js rules                     |
+| `npm run typecheck` | TypeScript in strict mode                         |
+| `npm test`          | Unit tests (Vitest and Testing Library)           |
+| `npm run check`     | Everything CI runs, except the build              |
+| `npm run deploy`    | Build and deploy from your machine (Firebase CLI) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+`.github/workflows/ci.yml` runs on every push and pull request:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Lint, typecheck, format check, tests, and build.
+2. If all of that passes, the built site is deployed to Firebase Hosting. Pushes to `main` go live; pull requests get a temporary preview URL posted on the PR.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The workflow needs one repository secret, `FIREBASE_SERVICE_ACCOUNT_JPS_PORTFOLIO_J15E12`. It already exists on the old `portfolio-archive` repo, but secrets don't copy between repos. Create a new one with `firebase init hosting:github`, or generate a key for the service account in Google Cloud and add it under **Settings → Secrets and variables → Actions**.
+
+`firebase.json` also redirects the old site's `/about`, `/projects` and `/resume` pages to the matching sections, so existing links keep working.
+
+## Project structure
+
+```
+src/
+  app/          Routes, metadata, global styles, sitemap and robots
+  components/   Page sections
+  content/      Site copy and data
+  lib/          Small helpers (date formatting)
+tests/          Unit tests
+```

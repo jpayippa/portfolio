@@ -1,14 +1,14 @@
-import path from "path";
 import type { NextConfig } from "next";
 
+/**
+ * The site is exported as plain static files (HTML, CSS, JS) into `out/`,
+ * which Firebase Hosting serves directly. No Node server is needed.
+ */
 const nextConfig: NextConfig = {
-  webpack(config) {
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      "@": path.resolve(__dirname, "src"),
-    };
-    return config;
-  },
+  output: "export",
+  images: { unoptimized: true },
+  reactStrictMode: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;
